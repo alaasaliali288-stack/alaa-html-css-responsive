@@ -439,7 +439,6 @@ header,main{
     cursor: pointer;
     margin-right: 32px;
     cursor: pointer;
-
 }
 .discover{
     font-family: Urbanist;
@@ -457,10 +456,14 @@ header,main{
     height: 485px;
 }
 .custom-photo{
+    width: 100%;
     position: absolute;
+    bottom: 0;
+    right: 0;
     z-index: 2;
 }
 .shape{
+    width: 84.68%;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -884,7 +887,6 @@ footer{
         height: 247px;
         }
     .shape{
-        width: 100%;
         height: 121px;
     }
     /*----TRIP DOCUMENTATION FOR MOBILE------  */
@@ -907,6 +909,7 @@ footer{
     .contact-us{
         flex-direction: column;
         margin-top: 40px;
+        margin-bottom: 42px;
     }
     .contact-us h1{
         width: 100%;
