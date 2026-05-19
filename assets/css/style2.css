@@ -22,11 +22,14 @@
 /* -------------------HEADER---------------- */
 
 /* ---NAVBAR------------------ */
-
+header,main{
+    overflow: hidden;
+}
 .navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     margin: 44px 120px 123px;
 }
 .logo{
@@ -37,21 +40,43 @@
     font-weight: 400;
     line-height: 1;
 }
+.navbar .nav-ul{
+    list-style: none;
+    display: none;
+    position: absolute;
+    right: 2.5%;
+    top: 0px;
+}
+.check-mark{
+    display :none;
+}
+.nav-ul li{
+    border-bottom: 2px dashed #262626;
+    background-color: #25A59E;
+    padding: 8px 0px;
+}
+.nav-ul a{
+    color: #262626;
+    text-decoration: none;
+}
+#first-icon:checked ~ .nav-ul{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
 .nav-icon{
     width: 28px;
     height: 23px;
+    cursor: pointer;
 }
 .menu-btn{
-    border: none;
     display: none;
-    background: transparent;
     cursor: pointer;
 }
 /* -------HERO----------- */
 /* section hero beginning */
 .hero{
     position: relative;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,6 +140,7 @@
     gap: 32px;
     background-color:#25A59E;
     width: 100%;
+    margin: 0px;
     min-height: 160px;
     padding: 48px 60px;
     z-index: 5;
@@ -141,12 +167,12 @@
 .destination{
     margin-left: 120px;
     margin-right: 120px;
+    margin-bottom: 100px;
 }
 .content{
     display: flex;
     justify-content: space-between;
     margin-top: 100px;
-    margin-bottom: 60px;
 }
 .content h1{
     font-family: Gilda Display;
@@ -162,7 +188,8 @@
     font-size: 18px;
     line-height: 32px;
     color: #595959;
-    margin: 33px 3px 24px 21px;
+    margin-top: 33px;
+    margin-bottom: 24px;
 }
 .for-input-search{
     display: flex;
@@ -170,6 +197,7 @@
     align-items: center;
     height: 64px;
     border-radius: 100px;
+    border: 1px solid #D9D9D9;
     background-color: #FAFAFA;
     position: relative;
 }
@@ -183,8 +211,8 @@
     right: 6.05px;
 }
 .search-destination{
-    width: 100%;
-    padding: 20px 60px 20px 0px;
+    width: 75%;
+    padding: 20px 40px 20px 0px;
     border: none;
     background-color: #FAFAFA;
 }
@@ -221,7 +249,6 @@
     grid-template-rows: repeat(2 , 1fr);
     row-gap: 40px;
     column-gap: 44px;
-    margin-bottom: 100px;
 }
 .card{
     padding: 16px 16px 36px;
@@ -299,6 +326,7 @@
     width: 32%;
     padding: 40px 32px 48px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    position: relative;
     flex-shrink: 0;
 }
 .list-card{
@@ -341,8 +369,11 @@
 }
 .more-details,.more-details-for-middle{
     display: flex;
-    justify-content: right;
     gap: 12px;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    
 }
 .more-details a{
     font-family: Gilda Display;
@@ -421,11 +452,21 @@
     text-decoration: none;
     border-bottom: 1px solid #33333399;
     cursor: pointer;
-
 }
-.custom-photo{
+.custom-photo-shape{
+    position: relative;
     width: 54.83%;
     height: 485px;
+}
+.custom-photo{
+    position: absolute;
+    z-index: 2;
+}
+.shape{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
 }
 
 /* ---TRIP-DOCUMENTAITION----------- */
@@ -436,7 +477,7 @@
     line-height: 84px;
     text-align: center;
     color: #262626;
-    margin: 200px auto 48px;
+    margin: 100px auto 48px;
     max-width: 760px;
 }
 .trip-video{
@@ -514,7 +555,6 @@ footer{
 .instagram{
     position: relative;
     cursor: pointer;
-
 }
 .icon1{
     position: absolute;
@@ -577,7 +617,6 @@ footer{
 .arrow-icon{
     position: relative;
     cursor: pointer;
-
 }
 .arrow-up{
     position: absolute;
@@ -587,7 +626,7 @@ footer{
     height: 56px;
     border-radius: 50%;
     background-color: #8C8C8C;
-    box-shadow: 5px 5px 30px #423E3A59;
+    box-shadow: 5px 5px 50px #423E3A59;
 }
 .up-icon{
     position: absolute;
@@ -614,8 +653,17 @@ footer{
 @media screen and (max-width: 992px){
     /* -----NAVBAR FOR MOBILE------------ */
     .navbar{
-        margin: 20px;
-        margin-bottom: 90px;
+        margin: 44px 20px 90px;
+    }
+    .logo{
+    font-size: 16px;
+    line-height: 100%;
+    }
+    .navbar .nav-ul{
+        right: 7%;
+    }
+    .nav-ul li{
+        padding: 4px 0px;
     }
     .nav-icon{
         display: none;
@@ -633,7 +681,7 @@ footer{
         top: 20%;
         width: 525px;
         height: 525px;
-        box-shadow: 0px -10px 250px #25A59E ;
+        box-shadow: 0px -5px 150px #25A59E ;
     }
     .hero .orange-border{
         top: 15%;
@@ -686,10 +734,11 @@ footer{
         width: 100%;
         }
     .content h1{
+        width: 100%;
         font-size: 40px;
         line-height: 52px;
         margin-bottom: 12px;
-        }
+    }
     .content p{
         font-size: 16px;
         line-height: 24px;
@@ -699,6 +748,7 @@ footer{
         display: flex;
         overflow: hidden;
         gap: 0;
+        box-shadow: 30px 50px 100px #f2f2f2;
         }
     .card{
         width: 100%;
@@ -784,9 +834,6 @@ footer{
         line-height: 23px;
         margin-bottom: 40px;
         }
-    .more-details,.more-details-for-middle{
-        gap: 0px;
-        }
     .more-details a{
         font-size: 12px;
         line-height: 23px;
@@ -797,6 +844,10 @@ footer{
         line-height: 23px;
         margin-bottom: 20px;
         }
+    .arrow-right{
+        width: 16px;
+        height: 16px;
+    }
     /* --------CUSTOM FOR MOBILE------------- */
     .custom{
         flex-direction: column;
@@ -808,6 +859,7 @@ footer{
         }    
     .trip-memorable h1{
         font-size: 40px;
+        margin-top: 0px;
         line-height: 52px;
         margin-bottom: 12px;
         }
@@ -819,20 +871,29 @@ footer{
     .custom-discover{
         display: none;
         }
+    .custom-photo-shape{
+        width: 100%;
+        height: 247px;
+        }
     .custom-photo{
         width: 100%;
         height: 247px;
-        margin-bottom: 80px;
         }
+    .shape{
+        width: 100%;
+        height: 121px;
+    }
     /*----TRIP DOCUMENTATION FOR MOBILE------  */
     .trip-documentation h1{
         width: 100%;
+        margin-top: 80px;
         margin-bottom: 24px;
         font-size: 40px;
         line-height: 52px;
         }
     .trip-video{
         height: 220px;
+        margin-bottom: 0px;
         }
     /* -----END MAIN------- */
     /* -------------FOOTER FOR MOBILE--------------- */
@@ -845,6 +906,7 @@ footer{
         margin-top: 40px;
     }
     .contact-us h1{
+        margin-top: 0px;
         font-size: 40px;
         line-height: 52px;
     }
@@ -869,6 +931,7 @@ footer{
     }
     .quick-access{
         margin-top:0px;
+        margin-bottom: 0px;
     }
     .arrow-icon{
         position: relative;
@@ -894,6 +957,7 @@ footer{
         width: 100%;
         text-align: center;
         gap: 27.67px;
+        margin-top: 42px;
         margin-bottom: 40px;
     }
     .unorder-list li{
