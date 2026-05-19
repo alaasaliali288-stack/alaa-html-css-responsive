@@ -330,6 +330,7 @@ header,main{
     flex-shrink: 0;
 }
 .list-card{
+    width: 88.05%;
     border-top: 4px solid #25A59E;
 }
 .list-card h1{
@@ -373,7 +374,6 @@ header,main{
     position: absolute;
     bottom: 10%;
     right: 10%;
-    
 }
 .more-details a{
     font-family: Gilda Display;
@@ -794,6 +794,7 @@ footer{
         margin-left: 20px;
         }
     .our-service h1{
+        padding: 0px 40px ;
         font-size: 40px;
         line-height: 52px;
         margin-bottom: 12px;
@@ -811,8 +812,9 @@ footer{
         }
     .list-card,.middle-list-card{
         width: 100%;
+        padding: 28px 20px 95px;
         }
-    .list-card h1{
+        .list-card h1{
         font-size: 28px;
         line-height: 40px;
         margin-bottom: 8px;
@@ -832,6 +834,10 @@ footer{
         line-height: 23px;
         margin-bottom: 40px;
         }
+    .more-details,.more-details-for-middle{
+    bottom: 5%;
+    right: 5%;
+    }
     .more-details a{
         font-size: 12px;
         line-height: 23px;
@@ -883,10 +889,10 @@ footer{
     }
     /*----TRIP DOCUMENTATION FOR MOBILE------  */
     .trip-documentation h1{
-        width: 100%;
-        margin: 80px auto 24px;
+        margin: 80px 20px 24px;
         font-size: 40px;
         line-height: 52px;
+        text-align: center;
         }
     .trip-video{
         height: 220px;
@@ -942,7 +948,7 @@ footer{
         height: 36px;
         border-radius: 50%;
         background-color: #8C8C8C;
-        box-shadow: 5px 5px 30px #423E3A59;
+        box-shadow: 10px 10px 20px #423E3A59;
     }
     .up-icon{
         position: absolute;
